@@ -1,19 +1,20 @@
-import java.util.Scanner;
+import java.util.Scanner; // importa biblioteca para ler entradas do usuário
 
+// class principal
 public class Main {
-    public static void imprimeCabecalho(String nome, double[] saldo)
+    public static void imprimeCabecalho(String nome, String tipoDeConta, double[] saldo)
     {
         System.out.printf("""
                 ****************************************
                  Dados iniciais do cliente:
 
                  Nome:       %s
-                 Tipo conta: Corrente
+                 Tipo conta: %s
                  Saldo:      %.2f
 
                 ****************************************
 
-                """, nome, saldo[0]
+                """.formatted(nome, tipoDeConta, saldo[0])
         );
     }
 
@@ -78,9 +79,10 @@ public class Main {
     {
         // fazer processo de cadastro
         String nome = "Marco Sieben";
+        String tipoDeConta = "Corrente";
         double[] saldo = { 2500.00 };
 
-        imprimeCabecalho(nome, saldo); // imprime o extrato
+        imprimeCabecalho(nome, tipoDeConta, saldo); // imprime o extrato
 
         int opcao = 0;
 
